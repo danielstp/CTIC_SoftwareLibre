@@ -1,0 +1,86 @@
+// NOTE - WordPress loads jQuery in noConflict mode
+jQuery(document).ready(function($) {
+
+    // To get here, JS must be enabled
+    $body = $('body');
+    $body.removeClass('no-js');
+
+    // skip-js is used when we don't want to run JS (e.g. for IE6)
+    if ( $('html').hasClass('skip-js') ){
+        return;
+    }
+
+    var intro_tabs_parent = $('#introTabs');
+    var tab_to_show = 'current-tab';
+
+    function showTab(tab) {
+
+        // Follow title link if the tab is currently visible
+        if (tab.type == 'click') {
+            if ( $(tab.target).parent().hasClass(tab_to_show) ) {
+                return true;
+            } else {
+                event.preventDefault();
+            }
+        }
+
+        // The target we want is the list element, not it's child link
+        var target = (tab.target.nodeName == 'A') ? $(tab.target).parent() : $(tab.target);
+
+        // Get class name for this set of elements (i.e. tabSecure, tabProtect)...
+        var className = target.attr('class').split(' ')[0]
+
+        // Hide all other tabs
+        $(target).siblings().removeClass(tab_to_show);
+
+        // Show the new tab
+        $(target).addClass(tab_to_show);
+
+        // Hide all other panels
+        $('> div', intro_tabs_parent).removeClass(tab_to_show);
+        
+        // Show the new panel
+        $('> div.'+className, intro_tabs_parent).addClass(tab_to_show);
+    }
+
+    // hide all but first mini-tab
+    $('> div', intro_tabs_parent).not('.mini-tab--1').removeClass(tab_to_show);
+
+    // Setup hover handler for tabs
+    $('#tabmenu li', intro_tabs_parent).hover(showTab).click(showTab);
+
+    var $nav = jQuery('#fixable-nav');
+    var $fullHeader = jQuery('#full-header');
+    function fixDiv() {
+        if ($(window).scrollTop() > $fullHeader.outerHeight()) {
+            $nav.addClass('stuck');
+            $body.addClass('scroll-beyond-header');
+        } else {
+            $nav.removeClass('stuck');
+            $body.removeClass('scroll-beyond-header');
+        }
+    }
+    $(window).scroll(fixDiv);
+    fixDiv();
+
+    jQuery('.advert-horizontal').addClass('ad-enabled');
+
+    // Allow reduced tables to be extended
+    jQuery('.extend-table-option').click( function() {
+        jQuery(this).parent().toggleClass('show-full-table');
+    });
+
+    // Enable dynamic share icons
+    $('.facebook-sharrre').sharrre({
+        share: {
+            facebook: true
+        },
+        enableHover: false,
+        enableTracking: true,
+        click: function(api, options){
+            api.simulateClick();
+            api.openPopup('facebook');
+        }
+    });
+
+} );

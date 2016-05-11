@@ -1,0 +1,247 @@
+google.load('visualization', '1', {packages: ["corechart"]});
+google.setOnLoadCallback(setupDataAndDraw);
+
+var showLogScale = new Object();
+var options = new Array();
+var globalOptions = {
+    width: '100%',
+    height: 400,
+    backgroundColor: 'none',
+    hAxis: {format: 'MMM yyyy', gridlines: {count: 9}},
+    DateFormat: {pattern: 'MMM yyyy'},
+    compareMode: true,
+    focusTarget: 'category'
+};
+
+var graphData = new Array();
+var myData = new Array();
+var graphCount = 4;
+
+function setupDataAndDraw() {
+    // The graphs don't really work well on tiny displays
+    // make an exception for user agents such as wkhtmltoimage which set window.width = 0
+    if (jQuery(window).width() <= 600 && jQuery(window).width() != 0) {
+        return;
+    }
+
+    graphData[1] = TotalHostnames;
+    graphData[2] = TotalMarketShare;
+    graphData[3] = ActiveHostnames;
+    graphData[4] = TopMarketShare;
+    if (typeof ComputerMarketShare != 'undefined') {
+        graphData[5] = ComputerMarketShare;
+        graphCount = 5;
+    }
+
+    options = {
+        1 : {}, // depends on showLogScale so set in drawGraph
+        2 : {
+            title: 'Web server developers: Market share of all sites',
+            vAxis: {'format': "#%"},
+        },
+        3 : {
+            title: 'Web server developers: Market share of active sites',
+            vAxis: {'format': "#%"},
+        },
+        4 : {
+            title: 'Web server developers: Market share of the top million busiest sites',
+            vAxis: {'format': "#%"},
+        },
+        5 : {
+            title: 'Web server developers: Market share of computers',
+            vAxis: {'format': "#%"},
+        }
+    };
+
+    for (var i = 1; i < graphCount + 1; i++) {
+        myData[i] = new google.visualization.DataTable(graphData[i]);
+    }
+
+    nicelyFormatData();
+
+    // find every div tag in the HTML that has class 'jsgraph'
+    jQuery('.jsgraph').each(function() {
+        drawGraph( this ); // run drawGraph on that element
+    })
+};
+
+function getConsistentColours(i) {
+    var dt = graphData[i];
+    var serverColours = {
+        'Apache'    : '#36C',
+        'Microsoft' : '#DC3912',
+        'Sun'       : '#FF9900',
+        'nginx'     : '#109618',
+        'Google'    : '#990099',
+        'NCSA'      : '#0099C6',
+        'Other'     : '#DD4477'
+    };
+
+    var colours = new Array();
+    for (i = 0; i < dt.cols.length; i++) {
+        if (typeof dt.cols[i].label != 'undefined') {
+            var next_colour = serverColours[dt.cols[i].label];
+            if (next_colour != undefined) {
+                colours.push(next_colour);
+            }
+        }
+    }
+    return (colours.length) ? {colors: colours} : {};
+}
+
+function nicelyFormatData() {
+    var myDatalimits = new Array();
+    var dateformatter = new google.visualization.DateFormat({pattern: 'MMM yyyy'});
+    for (i = 1; i <= graphCount; i++) {
+        myDatalimits[i] = myData[i].getNumberOfColumns() - 1;
+        dateformatter.format(myData[i],0);
+    }
+
+    // put commas in integers for first graph
+    var integerformatter = new google.visualization.NumberFormat({fractionDigits: '0'});
+    integerformatter.format(myData[1], 1); // hostname column
+    integerformatter.format(myData[1], 4); // active site column
+
+    // display as percentages rather than decimals for the rest
+    var percentformatter = new google.visualization.NumberFormat({pattern:'#,###%'});
+    for (i = 2; i <= graphCount; i = i + 1) {
+        for (j = 1; j <= myDatalimits[i]; j = j + 3) {
+            percentformatter.format(myData[i], j);
+        }
+    }
+}
+
+function drawGraph(element) {
+    var elementname = element.id;
+
+    // determine which dataset to use
+    var graph_type = parseInt(elementname.substring(5,7));
+    if (typeof myData[graph_type] == 'undefined') {
+        return;
+    }
+
+    // convert string 'YYYYMM' to javascript-friendly integers
+    var year = elementname.substring(8,12);
+    var month = elementname.substring(12,14) - 1;
+    var localdata = myData[graph_type].clone();
+    var localview = new google.visualization.DataView(localdata);
+    var localoptions = {};
+
+    if (graph_type == 1) {
+        var graphid = elementname.substring(5,17); // e.g. 01_201208_00
+        createButton(graphid);
+        var buttonElement = document.getElementById('button' + graphid);
+        if (buttonElement != null) {
+            buttonElement.style.display = "inline";
+        }
+
+        var showLog = (showLogScale[graphid] !== undefined)
+                        ? showLog = showLogScale[graphid]
+                        : true;
+
+        // options if logarithmic scale
+        if (showLog == true) {
+            var title_string = "Total number of websites (logarithmic scale)";
+            localoptions = {    vAxis: {logScale:   true,
+                                        format:     '#,###',
+                                        minValue:   10000,
+                                        maxValue:   1000000000,
+                                        gridlines:  {count: 6}
+                                },
+                                title: title_string
+                            };
+        // options if linear scale
+        } else {
+            var title_string = "Total number of websites (linear scale)";
+            localoptions = {    vAxis: {logScale:   false,
+                                        format:     '#,###',
+                                        minValue:   "automatic",
+                                        maxValue:   "automatic",
+                                        gridlines:  {count: 5}
+                                },
+                                title: title_string
+                            };
+        }
+    }
+
+    var displayedColumns = localview.getViewColumns();
+    // Remove data column, as it will be reformatted and added back in below
+    displayedColumns.splice(0,1);
+    // clear DIV tag contents so it can be replaced with the graph
+    element.innerHTML = "";
+
+    // make sure date column is in the right format
+    localview.setRows(
+        localview.getFilteredRows([{column:0, maxValue: new Date(year,month,1)}])
+    );
+    localview.setColumns([{
+            calc: function(data, row) {
+                return data.getFormattedValue(row,0);
+            },
+            type:'string'
+        }].concat(displayedColumns)
+    );
+
+    new google.visualization
+        .LineChart(element)
+        .draw(  localview,
+                jQuery.extend(
+                    globalOptions, options[graph_type], localoptions, getConsistentColours(graph_type)
+                )
+        );
+} // end drawGraph
+
+function logarithmSwitch(clicked_id) {
+    // determine exactly which graph is to be changed
+    var graph_id = clicked_id.substring(6,18);
+    // by default, showLogScale[graph_id] = undefined.
+    // default of 'undefined' should be 'true'
+    if (showLogScale[graph_id] !== undefined) {
+        showLogScale[graph_id] = !showLogScale[graph_id];
+    } else {
+        showLogScale[graph_id] = false;
+    }
+    $graphId = jQuery("#graph" + graph_id);
+    if ($graphId.length > 0) {
+        drawGraph($graphId[0]);
+    }
+}
+
+function createButton(graph_id) {
+    var ScaleText = "linear";
+    if (showLogScale[graph_id] !== undefined && showLogScale[graph_id] == false) {
+        ScaleText = "logarithmic";
+    }
+    var $btnDiv = jQuery('#button-div' + graph_id);
+    if ($btnDiv) {
+        $btnDiv.html(
+            '<button class="wssGraphButton" id="button'
+            + graph_id + '" style="display:none;" onclick="logarithmSwitch(this.id)">'
+            + 'Change Y-axis scale to ' + ScaleText + '</button>'
+        );
+    }
+}
+
+/* Similar to smart-resize, avoid firing functions linked to resize event
+ * multiple times. waitForEvent can be called multiple times without
+ * breaking, though note the use of a timerID.
+ */
+var waitForEvent = (function () {
+    var timers = {};
+    return function (callback, ms, timerID) {
+        if (!timerID) { timerID = "default"; }
+        if (timers[timerID]) {
+            clearTimeout (timers[timerID]);
+        }
+        timers[timerID] = setTimeout(callback, ms);
+    };
+})();
+
+/* Act responsively */
+jQuery(window).resize(function () {
+    waitForEvent(function(){
+        jQuery('.jsgraph').each(function() {
+            drawGraph( this ); // run drawGraph on that element
+        });
+    }, 250, "graph_redraw");
+});
