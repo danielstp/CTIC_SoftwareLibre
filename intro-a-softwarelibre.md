@@ -10,31 +10,30 @@ title: Introducción al Software Libre
 
 ---
 
-# Que es el software libre ? 
-
----
-
-1. No es una cuestión de precio
-1. **NO** tiene nada que ver con el concepto de **gratis**
-1. Es software que respeta la libertad de los usuarios.
-1. Cual libertad ? 
- 
----
-
 ![Richard Stallman](richard-stallman.jpg)
 
 **Richard Stallman**
 
-*Harvard University, Massachusetts Institute of Technology*
+*AI Lab, Massachusetts Institute of Technology*
 
 Fundador del proyecto GNU y de la Free Software Foundation
 
 ---
 
-# Dos casos
+# Que es el software libre ? 
 
-## A - El programa controla el usuario
-## B - El usuario controla el programa
+---
+
+1. No es una cuestión de precio
+1. **NO** tiene nada que ver con el concepto de **GRATIS**
+1. Es software que respeta la libertad de los usuarios.
+
+---
+
+# HAY DOS CASOS
+
+* El software controla el usuario
+* El usuario controla el software
 
 ---
 
@@ -66,7 +65,16 @@ Fundador del proyecto GNU y de la Free Software Foundation
 
 ---
 
+# Donde se utiliza ?
+
+* Linux domina el mercado de servidores
+* Linux domina el mercado de celulares y tablets
+
+---
+
 # Cuanto Cuesta ?
+
+- mejor dicho, cuando puedo invertir ?
 
 ---
 
