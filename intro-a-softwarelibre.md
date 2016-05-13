@@ -79,4 +79,10 @@ Fundador del proyecto GNU y de la Free Software Foundation
 ---
 
 
+![foss](Imagenes/foss-graphs.jpg)
 
+---
+
+# GRACIAS
+
+---
