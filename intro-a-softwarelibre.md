@@ -23,8 +23,17 @@ title: Introducción al Software Libre
 
 # Las 4 libertades fundamentales
 
+---
 
+## 0 - USO
 
+> Libertad de usar el programa, con cualquier propósito
+
+---
+
+## 1 - Estudio
+
+> Libertad de estudiar cómo funciona el programa y modificarlo, adaptándolo a las propias necesidades (Estudio). 
 
 ---
 
