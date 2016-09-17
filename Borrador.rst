@@ -245,11 +245,11 @@ producción).
 +-------------------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | Cantidad escalar proporcional al nivel de soberanía.                                      | [ -, + , ++ ]              | Ubuntu:                                                                                                                  |
 |                                                                                           |                            |                                                                                                                          |
-| Se asigna un (-) en caso el software dependa de una empresa.                              |                            | \- , depende de Canonical Ltd                                                                                            |
+| Se asigna un (-) en caso el software dependa de una empresa.                              |                            | - , depende de Canonical Ltd                                                                                             |
 |                                                                                           |                            |                                                                                                                          |
 | Se asigna un (+) si el software depende de una comunidad.                                 |                            | centOS:                                                                                                                  |
 |                                                                                           |                            |                                                                                                                          |
-| Se asigna un (++) si el software depende de una comunidad y propone un contrato social.   |                            | \+ , depende del centOS project                                                                                          |
+| Se asigna un (++) si el software depende de una comunidad y propone un contrato social.   |                            | + , depende del centOS project                                                                                           |
 |                                                                                           |                            |                                                                                                                          |
 |                                                                                           |                            | Debian:                                                                                                                  |
 |                                                                                           |                            |                                                                                                                          |
@@ -274,11 +274,11 @@ es muy probable que el mecanismo de release sea cerrado.
 +-----------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | Cantidad escalar proporcional al nivel de soberanía.                                                                              | [ - , + ]                  | Ubuntu:                                                                                                                  |
 |                                                                                                                                   |                            |                                                                                                                          |
-| Se asigna un (-) en caso el software no pueda recibir contribuciones de forma libre. Por ejemplo cuando depende de una empresa.   |                            | \- , depende de Canonical Ltd                                                                                            |
+| Se asigna un (-) en caso el software no pueda recibir contribuciones de forma libre. Por ejemplo cuando depende de una empresa.   |                            | - , depende de Canonical Ltd                                                                                             |
 |                                                                                                                                   |                            |                                                                                                                          |
 | Se asigna un (+) si se pude contribuir en el desarrollo del software de forma colaborativa.                                       |                            | centOS:                                                                                                                  |
 |                                                                                                                                   |                            |                                                                                                                          |
-|                                                                                                                                   |                            | \+ , depende del centOS project                                                                                          |
+|                                                                                                                                   |                            | + , depende del centOS project                                                                                           |
 |                                                                                                                                   |                            |                                                                                                                          |
 |                                                                                                                                   |                            | Debian:                                                                                                                  |
 |                                                                                                                                   |                            |                                                                                                                          |
@@ -290,8 +290,8 @@ Curva de aprendizaje
 
 + Duración media de los cursos introductorios
 
-Metodo difuso de clasificacion. Resultado de opiniones conjuntas desde
-multiples usuarios.
+Método difuso de clasificación. Resultado de opiniones conjuntas desde
+múltiples usuarios.
 
 Soporte 
 --------
@@ -316,8 +316,8 @@ cantidad de extensiones o plug-ins instalables.
 Primera release
 ---------------
 
-Con el termino release se entiende la publicacion de una version del
-software. Esta informacion representa la fecha de la primera version
+Con el termino release se entiende la publicación de una versión del
+software. Esta información representa la fecha de la primera versión
 publicada del software o paquete.
 
 +---------+----------------------------+-------------------------------+
@@ -334,14 +334,14 @@ publicada del software o paquete.
 Ultima Release
 --------------
 
-Esta informacion se refiere a la publicacion de la ultima version
-estable del software o paquete. No se toman en consideracion las release
+Esta información se refiere a la publicación de la ultima versión
+estable del software o paquete. No se toman en consideración las release
 beta, alfa o de alguna forma inestables.
 
 +---------+----------------------------+------------------------------------------------------+
 | Valor   | Rangos/Valores Aceptados   | Ejemplo                                              |
 +---------+----------------------------+------------------------------------------------------+
-| Fecha   | Fecha en los formatos:     | Mozilla Firefox: ultima version estable 24/08/2016   |
+| Fecha   | Fecha en los formatos:     | Mozilla Firefox: ultima versión estable 24/08/2016   |
 |         |                            |                                                      |
 |         | - Dia/Mes/Año              |                                                      |
 |         |                            |                                                      |
@@ -352,31 +352,103 @@ beta, alfa o de alguna forma inestables.
 Seguridad
 ---------
 
-Este parametro mide la vulnerabilidad del software. Como criterio para
-medir esta informacion se utiliza el numero de incidencias de seguridad
-publicadas en los siguentes medios:
+Existen diferentes clases de vulnerabilidad y diferentes métodos para
+determinar la seguridad del software. En el presente documento se
+propone un método para medir de forma general la seguridad mediante el
+numero de incidencias publicadas.
 
--  secunia
--  insecure.net
--  rapid7.com
+Se propone considerar el numero de incidencias de seguridad en
+proporción al tiempo de vida del software y la cuota de uso, segundo la
+formula:
 
-+---------+----------------------------+-----------+
-| Valor   | Rangos/Valores Aceptados   | Ejemplo   |
-+---------+----------------------------+-----------+
-|         | [ - - , - , + ,++ ]        |           |
-|         |                            |           |
-+---------+----------------------------+-----------+
+Donde **N** representa el numero total de incidencias de seguridad. Es
+un numero entero mayor o igual a cero y corresponde al numero de
+resultados de búsqueda en Google del siguiente valor:
+
+ "Security Advisory" "nombre del software"
+site:\ `http://secunia.com <http://secunia.com/>`__
+
+Donde “nombre del software” será remplazado con el nombre del programa
+que se quiere clasificar. Por ejemplo, para verificar el numero de
+incidencias de seguridad de Gimp, se deberá realizar la siguiente
+búsqueda:
+
+ "Security Advisory" "Gimp"
+site:\ `http://secunia.com <http://secunia.com/>`__
+
+El parámetro **a** representa el numero de años de vida del software.
+Este dato es la diferencia en años entra la fecha de la primera release
+y la fecha de la ultima release estable. Es un valor entero mayor o
+igual a 1.
+
+El parámetro **c** representa la cuota de uso del software. Esta
+información es típicamente disponible para grandes categorías de
+software como sistemas operativos, distribuciones de Linux, o
+navegadores web. Es un valor decimal entre 0 y 1. En caso no se disponga
+de esta información será suficiente asignar el valor 1 a esta variable.
+
+Se podrá utilizar el numero **n** para poder comparar las incidencias de
+seguridad de forma rápida y lo mas posible consistente.
+
++-----------------------------------------------------------------------------------------+----------------------------+-------------------------------+
+| Valor                                                                                   | Rangos/Valores Aceptados   | Ejemplo                       |
++-----------------------------------------------------------------------------------------+----------------------------+-------------------------------+
+| Una cantidad escalar proporcional al numero de incidencias de seguridad del software.   | [ - - , - , + ,++ ]        | Android : ( - - )             |
+|                                                                                         |                            |                               |
+|                                                                                         |                            | Mozilla Thunderbird : ( - )   |
+|                                                                                         |                            |                               |
+|                                                                                         |                            | Debian : ( + )                |
+|                                                                                         |                            |                               |
+|                                                                                         |                            | NetBSD : ( + + )              |
++-----------------------------------------------------------------------------------------+----------------------------+-------------------------------+
 
 Usabilidad
 ----------
 
-https://es.wikipedia.org/wiki/Usabilidad, referencia a los dos ISOS
+Existen dos normas ISO que contemplan el concepto de usabilidad.
+
+ISO/IEC 9126:
+
+"La usabilidad se refiere a la capacidad de un software de ser
+comprendido, aprendido, usado y ser atractivo para el usuario, en
+condiciones específicas de uso"
+
+ISO/IEC 9241:
+
+"Usabilidad es la eficacia, eficiencia y satisfacción con la que un
+producto permite alcanzar objetivos específicos a usuarios específicos
+en un contexto de uso específico"
+
+La primera norma pone mas énfasis en el uso del software. La segunda
+definición pone mas atención al resultado que el software nos permite
+alcanzar. En ambos casos la usabilidad no puede ser definida como una
+característica intrínseca del software. Contempla la relación entre el
+programa y el usuario.
+
+Por la razones mencionadas, podemos indicar que la medición de la
+usabilidad tendrá siempre una componente subjetiva. Para garantizar la
+calidad de la medición se recomienda establecer el valor de este
+parámetro en un trabajo de equipo, de esta forma se podrá tener en
+consideración la experiencia de varios usuarios.
+
++----------------------------------------------------------+----------------------------+----------------------------+
+| Valor                                                    | Rangos/Valores Aceptados   | Ejemplo                    |
++----------------------------------------------------------+----------------------------+----------------------------+
+| Cantidad escalar proporcional al grado de usabilidad.    | [ - - , - , + ,++ ]        | NetBSD : ( - - )           |
+|                                                          |                            |                            |
+|                                                          |                            | VIM : ( - )                |
+|                                                          |                            |                            |
+|                                                          |                            | GIMP : ( + )               |
+|                                                          |                            |                            |
+|                                                          |                            | Mozilla Firefox: ( + + )   |
++----------------------------------------------------------+----------------------------+----------------------------+
 
 Especialización
 ---------------
 
-El grado de especialización puede ser definido como la capacidad de
-cumplir tareas de diferentes tipos.
+El software tiene varios grados de especialización en base a su
+capacidad de realizar una o varias tareas. Se propone una clasificación
+en las siguientes categorías:
 
 -  **Software para uso general**. Puede ser utilizado para realizar una
    gran variedad de tareas. Se puede, por ejemplo, utilizar un
@@ -388,11 +460,27 @@ cumplir tareas de diferentes tipos.
 -  **Software para uso especial**. Este tipo de software cumple una sola
    tarea especifica. Puede ser un trabajo complejo como el calculo de
    salarios o el control de almacenes, pero consiste siempre en una
-   única tarea.
--  **Software hecho a la medida**.
+   única tarea. Hay programas que tienen varias características pero no
+   dejan de ser para uso especial. Por ejemplo un navegador web nos
+   permite entrar a paginas, aplicaciones y servicios web de vario tipo
+   pero técnicamente ejecuta una sola tarea: la renderización de paginas
+   web.
+
++---------------------------------------------------------------------------------------------------+----------------------------+------------------------+
+| Valor                                                                                             | Rangos/Valores Aceptados   | Ejemplo                |
++---------------------------------------------------------------------------------------------------+----------------------------+------------------------+
+| Cantidad escalar proporcional al nivel de especialización.                                        | [ - , + ,++ ]              | Gimp : (-)             |
+|                                                                                                   |                            |                        |
+| Se indica **(-)** para software de uso general.                                                   |                            | Mozilla Firefox: (+)   |
+|                                                                                                   |                            |                        |
+| Se indica **(+)** para software de uso especifico, donde la tarea tenga varias características.   |                            | Vim: (++)              |
+|                                                                                                   |                            |                        |
+| Se indica **(++)** para software de uso altamente especifico                                      |                            |                        |
++---------------------------------------------------------------------------------------------------+----------------------------+------------------------+
 
 Compatibilidad
 --------------
+
 
 ANEXO I
 =======
