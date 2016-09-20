@@ -565,21 +565,22 @@ de comprender y ser comprendido por otros programas. En este sentido, se puede
 considerar la capacidad de un software de funcionar con varios sistemas operativos.
 En el caso del software libre, esta capacidad se cumple en la gran mayoría de los casos,
 en cuanto su código fuente nos permite compilar el programa para sistemas y arquitecturas 
-específicos. 
+específicos. Otro tipo de compatibilidad de software es la capacidad de un programa de
+intercambiar informaciones y trabajar en conjunto con otros programas. 
 
 
-+-------------------------------+---------------------------+--------------+
-| Valor                         | Rangos/Valores Aceptados  | Ejemplo      |
-+===============================+===========================+==============+
-| Cantidad escalar proporcional | [ ⊖ , ⊕ , ⊕⊕ , ⊕⊕⊕ ]      | NetBSD : ⊖   |
-| al grado de compatibiliad del |                           |              |
-| software                      |                           | Debian : ⊕   |
-|                               |                           |              |
-|                               |                           | Ubuntu : ⊕⊕  |
-|                               |                           |              |
-|                               |                           | Linux :  ⊕⊕⊕ |
-|                               |                           |              |
-+-------------------------------+---------------------------+--------------+
++--------------------------------+---------------------------+--------------+
+| Valor                          | Rangos/Valores Aceptados  | Ejemplo      |
++================================+===========================+==============+
+| Cantidad escalar proporcional  | [ ⊖ , ⊕ , ⊕⊕ , ⊕⊕⊕ ]      | NetBSD : ⊖   |
+| al grado de compatibilidad del |                           |              |
+| software                       |                           | Debian : ⊕   |
+|                                |                           |              |
+|                                |                           | Ubuntu : ⊕⊕  |
+|                                |                           |              |
+|                                |                           | Linux :  ⊕⊕⊕ |
+|                                |                           |              |
++--------------------------------+---------------------------+--------------+
 
 
 ANEXO I
