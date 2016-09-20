@@ -300,21 +300,60 @@ es muy probable que el mecanismo de publicación de versiones sea cerrado.
 Curva de aprendizaje
 --------------------
 
-+ Duración media de los cursos introductorios
+La curva de aprendizaje es un diagrama que representa el esfuerzo 
+necesario para aprender una nueva herramienta.
+En tal diagrama están representados en el eje horizontal la acumulación 
+de lo aprendido y en el eje vertical la acumulación del tiempo gastado. 
+La pendiente de la curva es proporcional a la dificultad de aprendizaje.
 
-Método difuso de clasificación. Resultado de opiniones conjuntas desde
-múltiples usuarios.
+En el contexto del presente documento, se propone indicar simplemente
+un valor cualitativo que represente el grado de dificultad de aprendizaje
+del software. 
+
+Esta cantidad depende de la relación entre software y usuario. Por
+esta razón la medición de este valor tiene una componente subjetiva.
+Se recomienda ponderar este valor en un trabajo de equipo para poder
+tener en consideración la experiencia de varios usuarios.  
+
++------------------------------------+--------------------------+---------------+
+| Valor                              | Rangos/Valores Aceptados | Ejemplo       |
++------------------------------------+--------------------------+---------------+
+| Cantidad escalar proporcional al   | [ ⊖⊖, ⊖ , ⊕ , ⊕⊕ ]       | NetBSD : ⊖⊖   |
+| grado de dificultad de aprendizaje |                          |               |
+|                                    |                          | Linux  : ⊖    |
+|                                    |                          |               |
+|                                    |                          | Debian : ⊕    |
+|                                    |                          |               |
+|                                    |                          | Ubuntu : ⊕⊕   |
+|                                    |                          |               |
++------------------------------------+--------------------------+---------------+
+
 
 Soporte 
 --------
 
-(Tamaño Comunidad) (Gobierno, Sociedad Civil)
+El nivel de soporte ofrecido por un proyecto indica la capacidad de ofrecer
+canales de comunicación que permitan mejorar la usabilidad del software, 
+resolver problemas, y proveer actualizaciones. Existen varios factores 
+que contribuyen en la creación de un sistema de soporte:
 
- Presencia en Bolivia
+- **Tamano de la Comunidad**. La comunidad es presente mediante newsletters, listas de correo o foros.
+- **Presencia en Bolivia**. La comunidad tiene miembros en Bolivia. 
+- **Busqueda con la palabra Bolivia** . Por ejemplo: Manjaro Linux Bolivia. 
 
-+ Búsquedas dentro del dominio .bo (ArchLinux site:.bo)
++------------------------------------+--------------------------+---------------+
+| Valor                              | Rangos/Valores Aceptados | Ejemplo       |
++------------------------------------+--------------------------+---------------+
+| Cantidad escalar proporcional al   | [ ⊖⊖, ⊖ , ⊕ , ⊕⊕ ]       | NetBSD : ⊖⊖   |
+| nivel de soporte ofrecido          |                          |               |
+|                                    |                          | OpenBSD : ⊖   |
+|                                    |                          |               |
+|                                    |                          | Debian : ⊕    |
+|                                    |                          |               |
+|                                    |                          | Ubuntu : ⊕⊕   |
+|                                    |                          |               |
++------------------------------------+--------------------------+---------------+
 
-+ Búsquedas con la palabra Bolivia (Manjaro Linux Bolivia)
 
 Numero de paquetes u opciones
 -----------------------------
@@ -324,6 +363,18 @@ con nuevas funcionalidades. En el caso de sistemas operativos esta
 medida se refiere al numero de paquetes que se puedan instalar desde sus
 repositorios. En el caso de programas esta medida se refiere a la
 cantidad de extensiones o plug-ins instalables.
+
++------------------------------------+----------------------------------+-------------------------------+
+| Valor                              | Rangos/Valores Aceptados         | Ejemplo                       |
++------------------------------------+----------------------------------+-------------------------------+
+| Numero entero igual al numero      | [ 0 , ∞ ]                        | Debian: 56k+                  |
+| de paquetes del sistema operativo  |                                  |                               |
+| o el numero de plugins o           | En caso de valores grande        | NetBSD: 3k+                   |
+| extensiones                        | se puede indicar como múltiples  |                               |
+| del software                       | de mil aumentando la letra k.    | LibreOffice: 302              |
+|                                    |                                  |                               |
++------------------------------------+----------------------------------+-------------------------------+
+
 
 Primera versión
 ---------------
@@ -481,16 +532,19 @@ en las siguientes categorías:
 +---------------------------+---------------------------+----------------------+
 | Valor                     | Rangos/Valores Aceptados  | Ejemplo              |
 +===========================+===========================+======================+
-| Cantidad escalar          | [ ⊖ , ⊕ ,⊕⊕ ]             | Gimp : (⊖)           |
+| Cantidad escalar          | [ ⊖ , ⊕ , ⊕⊕ ]            | Gimp : ⊖             |
 | proporcional al           |                           |                      |
-| nivel de especialización. |                           |                      |
-| Se indica **(-)** para    |                           | Mozilla Firefox: (⊕) |
+| nivel de especialización. |                           | Mozilla Firefox: ⊕   |
+|                           |                           |                      |
+| Se indica **⊖** para      |                           | Vim: ⊕⊕              |
 | software de uso general.  |                           |                      |
-| Se indica **(+)** para    |                           | Vim: (⊕⊕)            |
+|                           |                           |                      |
+| Se indica **⊕** para      |                           |                      |
 | software de uso especifico|                           |                      |
 | , donde la tarea tenga    |                           |                      |
 | varias características.   |                           |                      |
-| Se indica **(++)** para   |                           |                      |
+|                           |                           |                      |
+| Se indica **⊕⊕** para     |                           |                      |
 | software de uso altamente |                           |                      |
 | especifico                |                           |                      |
 |                           |                           |                      |
@@ -498,6 +552,35 @@ en las siguientes categorías:
 
 Compatibilidad
 --------------
+
+El software puede tener diferentes grados de compatibilidad dependiendo de
+los factores que se toman en consideración.
+
+En el caso de los sistemas operativos, la compatibilidad se define en relación 
+a el hardware. Es decir la capacidad de funcionar con una determinada arquitectura
+de CPU. También la disponibilidad de drivers para una determinada maquina.
+
+En el caso de programas informáticos, la compatibilidad se define como la capacidad
+de comprender y ser comprendido por otros programas. En este sentido, se puede
+considerar la capacidad de un software de funcionar con varios sistemas operativos.
+En el caso del software libre, esta capacidad se cumple en la gran mayoría de los casos,
+en cuanto su código fuente nos permite compilar el programa para sistemas y arquitecturas 
+específicos. Otro tipo de compatibilidad de software es la capacidad de un programa de
+intercambiar informaciones y trabajar en conjunto con otros programas. 
+
+
++--------------------------------+---------------------------+--------------+
+| Valor                          | Rangos/Valores Aceptados  | Ejemplo      |
++================================+===========================+==============+
+| Cantidad escalar proporcional  | [ ⊖ , ⊕ , ⊕⊕ , ⊕⊕⊕ ]      | NetBSD : ⊖   |
+| al grado de compatibilidad del |                           |              |
+| software                       |                           | Debian : ⊕   |
+|                                |                           |              |
+|                                |                           | Ubuntu : ⊕⊕  |
+|                                |                           |              |
+|                                |                           | Linux :  ⊕⊕⊕ |
+|                                |                           |              |
++--------------------------------+---------------------------+--------------+
 
 
 ANEXO I
