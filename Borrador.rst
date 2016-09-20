@@ -378,16 +378,14 @@ Donde **N** representa el numero total de incidencias de seguridad. Es
 un numero entero mayor o igual a cero y corresponde al numero de
 resultados de búsqueda en Google del siguiente valor:
 
- "Security Advisory" "nombre del software"
-site:\ `http://secunia.com <http://secunia.com/>`__
+ ``"Security Advisory" "nombre del software" site:secunia.com``
 
 Donde “nombre del software” será remplazado con el nombre del programa
 que se quiere clasificar. Por ejemplo, para verificar el numero de
 incidencias de seguridad de Gimp, se deberá realizar la siguiente
 búsqueda:
 
- "Security Advisory" "Gimp"
-site:\ `http://secunia.com <http://secunia.com/>`__
+ ``"Security Advisory" "Gimp" site:secunia.com``
 
 El parámetro **a** representa el numero de años de vida del software.
 Este dato es la diferencia en años entra la fecha de la primera versión
