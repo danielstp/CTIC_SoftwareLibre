@@ -200,12 +200,10 @@ del software utilizados en la formulación de la lista de alternativas de
 software libre. Estos parámetros están concebidos para ser reconducidos
 lo mas posible a cantidades ponderables.
 
-
-A continuación se presentan os criterios de 
-selección. Por cada uno se indica  su descripción, la métrica 
+Cada uno de los criterios es presentado con su descripción, la métrica 
 utilizada y un ejemplo de uso. Los criterio son presentados en
 orden de importancia decreciente. Este aspecto es importante 
-para poder realizar comparaciones de forma iterativa.  
+para poder realizar comparaciones de forma progresiva.  
 
 Licencia
 --------
