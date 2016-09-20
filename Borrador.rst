@@ -197,10 +197,12 @@ CRITERIOS DE SELECCIÓN
 
 En la presente sección se presentan los doce criterios de clasificación
 del software utilizados en la formulación de la lista de alternativas de
-software libre. Estos parámetros están concebidos para ser reconducidos
-lo mas posible a cantidades ponderables. A continuación se presentan en
-detalle los varios criterios indicando en particular su descripción, la
-métrica utilizada y un ejemplo de uso.
+software libre. Estos están pensados de manera jerárquica, esto permite hacer el
+análisis de los criterios, hasta que se llegue a uno que los diferencie. Estos
+parámetros están concebidos para ser reconducidos lo mas posible a cantidades
+ponderables. A continuación se presentan en detalle los varios criterios
+indicando en particular su descripción, la métrica utilizada y un ejemplo de
+uso.
 
 Licencia
 --------
@@ -218,17 +220,20 @@ las licencias en seis categorías:
 -  licencia de software de código cerrado
 -  software de dominio público (sin licencia)
 
-+------------------------------------------------------------+---------------------------------------+---------------------+
-| Valor                                                      | Rangos/Valores aceptados              | Ejemplo             |
-+------------------------------------------------------------+---------------------------------------+---------------------+
-| La sigla de la licencia aplicada al software.              | Cualquier sigla de licencia valida    | Mozilla Firefox:    |
-|                                                            |                                       |                     |
-| Se añade la versión de la licencia cuando sea disponible   |                                       | MPLv2.0             |
-|                                                            |                                       |                     |
-|                                                            |                                       | VLC media player:   |
-|                                                            |                                       |                     |
-|                                                            |                                       | GPLv2.1+            |
-+------------------------------------------------------------+---------------------------------------+---------------------+
++-------------------+-------------------------------------+--------------------+
+| Valor             | Rangos/Valores aceptados            | Ejemplo            |
++-------------------+-------------------------------------+--------------------+
+| La sigla de la    | Cualquier sigla de licencia valida  | Mozilla Firefox:   |
+| licencia aplicada |                                     | MPLv2.0            |
+| al software.      |                                     |                    |
+|                   |                                     | VLC media player:  |
+| Se añade la       |                                     | GPLv2.1+           |
+| versión de la     |                                     |                    |
+| licencia cuando   |                                     |                    |
+| sea disponible    |                                     |                    |
+|                   |                                     |                    |
+|                   |                                     |                    |
++-------------------+-------------------------------------+--------------------+
 
 Soberanía
 ---------
@@ -243,17 +248,17 @@ producción).
 +-------------------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | Valor                                                                                     | Rangos/Valores Aceptados   | Ejemplo                                                                                                                  |
 +-------------------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| Cantidad escalar proporcional al nivel de soberanía.                                      | [ -, + , ++ ]              | Ubuntu:                                                                                                                  |
+| Cantidad escalar proporcional al nivel de soberanía.                                      | [ ⊖, ⊕ , ⊕⊕ ]              | Ubuntu:                                                                                                                  |
 |                                                                                           |                            |                                                                                                                          |
-| Se asigna un (-) en caso el software dependa de una empresa.                              |                            | - , depende de Canonical Ltd                                                                                             |
+| Se asigna un (-) en caso el software dependa de una empresa.                              |                            | ⊖ , depende de Canonical Ltd                                                                                             |
 |                                                                                           |                            |                                                                                                                          |
 | Se asigna un (+) si el software depende de una comunidad.                                 |                            | centOS:                                                                                                                  |
 |                                                                                           |                            |                                                                                                                          |
-| Se asigna un (++) si el software depende de una comunidad y propone un contrato social.   |                            | + , depende del centOS project                                                                                           |
+| Se asigna un (++) si el software depende de una comunidad y propone un contrato social.   |                            | ⊕ , depende del centOS project                                                                                           |
 |                                                                                           |                            |                                                                                                                          |
 |                                                                                           |                            | Debian:                                                                                                                  |
 |                                                                                           |                            |                                                                                                                          |
-|                                                                                           |                            | ++ , es comunitario y propone el contrato social DSC (Debian Social Contract, https://www.debian.org/social\_contract)   |
+|                                                                                           |                            | ⊕⊕ , es comunitario y propone el contrato social DSC (Debian Social Contract, https://www.debian.org/social\_contract)   |
 +-------------------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Generación de Tecnología
@@ -267,23 +272,29 @@ libremente a disposición su documentación. Al mismo tiempo, un proyecto
 incentiva la generación de tecnología cuando esta dispuesto en recibir
 aportes y contribuciones por parte de la comunidad de forma libre.
 Cuando el desarrollo del software esta bajo el control de una empresa,
-es muy probable que el mecanismo de release sea cerrado.
+es muy probable que el mecanismo de publicación de versiones sea cerrado.
 
-+-----------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| Valor                                                                                                                             | Rangos/Valores Aceptados   | Ejemplo                                                                                                                  |
-+-----------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| Cantidad escalar proporcional al nivel de soberanía.                                                                              | [ - , + ]                  | Ubuntu:                                                                                                                  |
-|                                                                                                                                   |                            |                                                                                                                          |
-| Se asigna un (-) en caso el software no pueda recibir contribuciones de forma libre. Por ejemplo cuando depende de una empresa.   |                            | - , depende de Canonical Ltd                                                                                             |
-|                                                                                                                                   |                            |                                                                                                                          |
-| Se asigna un (+) si se pude contribuir en el desarrollo del software de forma colaborativa.                                       |                            | centOS:                                                                                                                  |
-|                                                                                                                                   |                            |                                                                                                                          |
-|                                                                                                                                   |                            | + , depende del centOS project                                                                                           |
-|                                                                                                                                   |                            |                                                                                                                          |
-|                                                                                                                                   |                            | Debian:                                                                                                                  |
-|                                                                                                                                   |                            |                                                                                                                          |
-|                                                                                                                                   |                            | ++ , es comunitario y propone el contrato social DSC (Debian Social Contract, https://www.debian.org/social\_contract)   |
-+-----------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+---------------------------+-----------------------------------------+
+| Valor                                         | Rangos/Valores Aceptados  | Ejemplo                                 |
++-----------------------------------------------+---------------------------+-----------------------------------------+
+| Cantidad escalar proporcional al nivel        | [ ⊖ , ⊕ ]                 | Ubuntu:                                 |
+| de soberanía.                                 |                           |                                         |
+|                                               |                           |                                         |
+| Se asigna un (-) en caso el software no pueda |                           | ⊖ , depende de Canonical Ltd            |
+| recibir contribuciones de forma libre. Por    |                           |                                         |
+| ejemplo cuando depende de una empresa.        |                           |                                         |
+|                                               |                           |                                         |
+| Se asigna un (+) si se pude contribuir en el  |                           | centOS:                                 |
+| desarrollo del software de forma colaborativa.|                           |                                         |
+|                                               |                           | ⊕, depende del centOS project           |
+|                                               |                           |                                         |
+|                                               |                           | Debian:                                 |
+|                                               |                           |                                         |
+|                                               |                           | ⊕⊕ , es comunitario y propone el        |
+|                                               |                           | contrato social DSC (Debian Social      |
+|                                               |                           | Contract,                               |
+|                                               |                           | https://www.debian.org/social\_contract)|
++-----------------------------------------------+---------------------------+-----------------------------------------+
 
 Curva de aprendizaje
 --------------------
@@ -313,12 +324,11 @@ medida se refiere al numero de paquetes que se puedan instalar desde sus
 repositorios. En el caso de programas esta medida se refiere a la
 cantidad de extensiones o plug-ins instalables.
 
-Primera release
+Primera versión
 ---------------
 
-Con el termino release se entiende la publicación de una versión del
-software. Esta información representa la fecha de la primera versión
-publicada del software o paquete.
+La publicación inicial del software. Esta información representa la fecha de la
+primera versión publicada del software o paquete.
 
 +---------+----------------------------+-------------------------------+
 | Valor   | Rangos/Valores Aceptados   | Ejemplo                       |
@@ -331,23 +341,23 @@ publicada del software o paquete.
 |         |                            |                               |
 +---------+----------------------------+-------------------------------+
 
-Ultima Release
+Ultima versión
 --------------
 
 Esta información se refiere a la publicación de la ultima versión
-estable del software o paquete. No se toman en consideración las release
+estable del software o paquete. No se toman en consideración las versiones
 beta, alfa o de alguna forma inestables.
 
-+---------+----------------------------+------------------------------------------------------+
-| Valor   | Rangos/Valores Aceptados   | Ejemplo                                              |
-+---------+----------------------------+------------------------------------------------------+
-| Fecha   | Fecha en los formatos:     | Mozilla Firefox: ultima versión estable 24/08/2016   |
-|         |                            |                                                      |
-|         | - Dia/Mes/Año              |                                                      |
-|         |                            |                                                      |
-|         | - Mes/Año                  |                                                      |
-|         |                            |                                                      |
-+---------+----------------------------+------------------------------------------------------+
++---------+----------------------------+---------------------------------------+
+| Valor   | Rangos/Valores Aceptados   | Ejemplo                               |
++---------+----------------------------+---------------------------------------+
+| Fecha   | Fecha en los formatos:     | Mozilla Firefox: ultima versión       |
+|         |                            |               estable 24/08/2016      |
+|         | - Dia/Mes/Año              |                                       |
+|         |                            |                                       |
+|         | - Mes/Año                  |                                       |
+|         |                            |                                       |
++---------+----------------------------+---------------------------------------+
 
 Seguridad
 ---------
@@ -358,8 +368,10 @@ propone un método para medir de forma general la seguridad mediante el
 numero de incidencias publicadas.
 
 Se propone considerar el numero de incidencias de seguridad en
-proporción al tiempo de vida del software y la cuota de uso, segundo la
-formula:
+proporción al tiempo de vida del software y la cuota de uso, segun la formula:
+
+.. math::
+    n = c * \frac{N}{a}
 
 Donde **N** representa el numero total de incidencias de seguridad. Es
 un numero entero mayor o igual a cero y corresponde al numero de
@@ -377,8 +389,8 @@ búsqueda:
 site:\ `http://secunia.com <http://secunia.com/>`__
 
 El parámetro **a** representa el numero de años de vida del software.
-Este dato es la diferencia en años entra la fecha de la primera release
-y la fecha de la ultima release estable. Es un valor entero mayor o
+Este dato es la diferencia en años entra la fecha de la primera versión
+y la fecha de la ultima versión estable. Es un valor entero mayor o
 igual a 1.
 
 El parámetro **c** representa la cuota de uso del software. Esta
@@ -390,17 +402,18 @@ de esta información será suficiente asignar el valor 1 a esta variable.
 Se podrá utilizar el numero **n** para poder comparar las incidencias de
 seguridad de forma rápida y lo mas posible consistente.
 
-+-----------------------------------------------------------------------------------------+----------------------------+-------------------------------+
-| Valor                                                                                   | Rangos/Valores Aceptados   | Ejemplo                       |
-+-----------------------------------------------------------------------------------------+----------------------------+-------------------------------+
-| Una cantidad escalar proporcional al numero de incidencias de seguridad del software.   | [ - - , - , + ,++ ]        | Android : ( - - )             |
-|                                                                                         |                            |                               |
-|                                                                                         |                            | Mozilla Thunderbird : ( - )   |
-|                                                                                         |                            |                               |
-|                                                                                         |                            | Debian : ( + )                |
-|                                                                                         |                            |                               |
-|                                                                                         |                            | NetBSD : ( + + )              |
-+-----------------------------------------------------------------------------------------+----------------------------+-------------------------------+
++------------------------+-----------------+-------------------------------+
+| Valor                  | Rangos/Valores  | Ejemplo                       |
+|                        | Aceptados       |                               |
++========================+=================+===============================+
+| Una cantidad escalar   | [ ⊖⊖, ⊖, ⊕ ,⊕⊕] | Android : ( ⊖⊖ )              |
+| proporcional al numero |                 |                               |
+| de incidencias de      |                 | Mozilla Thunderbird : ( ⊖ )   |
+| seguridad del software.|                 |                               |
+|                        |                 | Debian : ( ⊕ )                |
+|                        |                 |                               |
+|                        |                 | NetBSD : ( ⊕⊕ )               |
++------------------------+-----------------+-------------------------------+
 
 Usabilidad
 ----------
@@ -431,17 +444,17 @@ calidad de la medición se recomienda establecer el valor de este
 parámetro en un trabajo de equipo, de esta forma se podrá tener en
 consideración la experiencia de varios usuarios.
 
-+----------------------------------------------------------+----------------------------+----------------------------+
-| Valor                                                    | Rangos/Valores Aceptados   | Ejemplo                    |
-+----------------------------------------------------------+----------------------------+----------------------------+
-| Cantidad escalar proporcional al grado de usabilidad.    | [ - - , - , + ,++ ]        | NetBSD : ( - - )           |
-|                                                          |                            |                            |
-|                                                          |                            | VIM : ( - )                |
-|                                                          |                            |                            |
-|                                                          |                            | GIMP : ( + )               |
-|                                                          |                            |                            |
-|                                                          |                            | Mozilla Firefox: ( + + )   |
-+----------------------------------------------------------+----------------------------+----------------------------+
++----------------------+---------------------------+---------------------------+
+| Valor                | Rangos/Valores Aceptados  | Ejemplo                   |
++======================+===========================+===========================+
+| Cantidad escalar     | [ ⊖⊖ , ⊖ , ⊕ ,⊕⊕ ]        | NetBSD : ( ⊖⊖ )           |
+| proporcional al      |                           |                           |
+| grado de usabilidad. |                           | VIM : ( ⊖ )               |
+|                      |                           |                           |
+|                      |                           | GIMP : ( ⊕ )              |
+|                      |                           |                           |
+|                      |                           | Mozilla Firefox: ( ⊕⊕ )   |
++----------------------+---------------------------+---------------------------+
 
 Especialización
 ---------------
@@ -466,17 +479,23 @@ en las siguientes categorías:
    pero técnicamente ejecuta una sola tarea: la renderización de paginas
    web.
 
-+---------------------------------------------------------------------------------------------------+----------------------------+------------------------+
-| Valor                                                                                             | Rangos/Valores Aceptados   | Ejemplo                |
-+---------------------------------------------------------------------------------------------------+----------------------------+------------------------+
-| Cantidad escalar proporcional al nivel de especialización.                                        | [ - , + ,++ ]              | Gimp : (-)             |
-|                                                                                                   |                            |                        |
-| Se indica **(-)** para software de uso general.                                                   |                            | Mozilla Firefox: (+)   |
-|                                                                                                   |                            |                        |
-| Se indica **(+)** para software de uso especifico, donde la tarea tenga varias características.   |                            | Vim: (++)              |
-|                                                                                                   |                            |                        |
-| Se indica **(++)** para software de uso altamente especifico                                      |                            |                        |
-+---------------------------------------------------------------------------------------------------+----------------------------+------------------------+
++---------------------------+---------------------------+----------------------+
+| Valor                     | Rangos/Valores Aceptados  | Ejemplo              |
++===========================+===========================+======================+
+| Cantidad escalar          | [ ⊖ , ⊕ ,⊕⊕ ]             | Gimp : (⊖)           |
+| proporcional al           |                           |                      |
+| nivel de especialización. |                           |                      |
+| Se indica **(-)** para    |                           | Mozilla Firefox: (⊕) |
+| software de uso general.  |                           |                      |
+| Se indica **(+)** para    |                           | Vim: (⊕⊕)            |
+| software de uso especifico|                           |                      |
+| , donde la tarea tenga    |                           |                      |
+| varias características.   |                           |                      |
+| Se indica **(++)** para   |                           |                      |
+| software de uso altamente |                           |                      |
+| especifico                |                           |                      |
+|                           |                           |                      |
++---------------------------+---------------------------+----------------------+
 
 Compatibilidad
 --------------
@@ -503,153 +522,103 @@ trabajo de actualización y versionamiento.
 Cualquier referencia a organizaciones o productos específicos es solo a
 titulo informativo, y no constituye un endoso del producto/organización.
 
+.. |SOB| replace:: Soberanía
+.. |GEN| replace:: Generación de tecnología
+.. |APR| replace:: Curva de aprendizaje
+.. |SOP| replace:: Soporte
+.. |PAQ| replace:: N° de paquetes
+.. |ULT| replace:: Fecha Ultima Versión
+.. |SEG| replace:: Seguridad
+.. |USAB| replace:: Usabilidad
+.. |ESP| replace:: Especialización
+.. |Comp| replace:: Compatibilidad
 
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Categoría        | Funcionalidad                          | Software                 | Licencia      | **SOB**   | **GEN TEC**   | APR   | **SOP**   | **N° PAQ**   | Año de Inicio   | Fecha Ultima Versión   | **SEG**   | **USAB**   | **ESP**   | Comp   |
-+==================+========================================+==========================+===============+===========+===============+=======+===========+==============+=================+========================+===========+============+===========+========+
-| S.O.             | Escritorio                             | Linux                    | GPLv2         |  \+       |  \+           | \-    | ++        |  90k+        | 1991            | 07/29/2016             |  \-       |  ++        |  \-       |  +++   |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| S.O.             | Escritorio                             | PC-BSD                   | BSD           |  \-       |  \-           | \-\-  | \-        |  10k+        | 2006            | 04/04/2016             |  ++       |  \+        |  \-       |  \-    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| S.O.             | Movil                                  | Linux                    | GPLv2         |  \+       |  \+           | \-    | ++        |  10k+        | 1991            | 07/29/2016             |  \-       |  \-        |  \-       |  +++   |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| S.O.             | Movil                                  | Android                  | APL           |  \-       |  \-           | \+    | ++        |  700k+       | 2008            | 07/18/2016             |  \-\-     |  ++        |  \+       |  +++   |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| S.O.             | Embebido                               | Linux                    | GPLv2         |  \+       |  \+           | \-    | ++        |  10k+        | 1991            | 07/29/2016             |  \-       |  \-        |  \+       |  +++   |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| S.O.             | Embebido                               | NetBSD                   | BSD           |  \-       |  \-           | \- \- | \- \-     |  3k+         | 1993            | 05/28/2016             |  ++       |  \-\-      |  \+       |  \-    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| S.O.             | Embebido                               | DragonFlyBSD             | BSD           |  \-       |  \-           | \- \- | \- \-     |  3k+         | 2004            | 04/19/2016             |  ++       |  \-\-      |  \+       |  \-    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| S.O.             | Servidor                               | Linux                    | GPLv2         |  \+       |  \+           | \-    | ++        |  10k+        | 1991            | 07/29/2016             |  \-       |  ++        |  \-       |  +++   |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| S.O.             | Servidor                               | OpenBSD                  | BSD           |  \-       |  \-           | \-\-  | \-        |  3k+         | 1996            | 03/29/2016             |  +++      |  \+        |  \-       |  \-    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Distro           | Escritorio                             | Debian                   | DFSG          |  ++       |  \+           | \+    | \+        |  56k+        | 1993            | 06/04/2016             |  \+       |  \+        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Distro           | Escritorio                             | Fedora                   | Varias        |  \-       |  \+           | \+    | \+        |  22k+        | 2003            | 06/21/2016             |  \+       |  \+        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Distro           | Escritorio                             | Ubuntu                   | GPL + otras   |  \-       |  \+           | ++    | ++        |  58k+        | 2004            | 07/21/2016             |  \+       |  ++        |  \-       |  ++    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Distro           | Servidor                               | Debian                   | DFSG          |  \+       |  \+           | \+    | \+        |  56k+        | 1993            | 06/04/2016             |  \+       |  \+        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Distro           | Servidor                               | CentOS                   | GPL           |  \+       |  \+           | \+    | \+        |  17k+        | 2004            | 05/25/2016             |  \+       |  \+        |  \+       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Distro           | Servidor                               | Ubuntu                   | GPL + otras   |  \-       |  \+           | ++    | ++        |  58k+        | 2004            | 07/21/2016             |  \+       |  ++        |  \-       |  ++    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Distro           | Servidor                               | RHEL                     | GPL + otras   |  ---      |  \+           | \+    | \+        |  17k+        | 2004            | 05/25/2016             |  \+       |  \+        |  \+       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Ofimatica        | Paquete de oficina                     | LibreOffice              | MPLv2.0       |  \+       |  \+           | \+    | \+        |  \-\-        | 2011            | 07/22/2016             |  \+       |  \+        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Ofimatica        | Edición de imágenes bitmap             | Gimp                     | GPL3+         |  \+       |  \+           | \+    | ++        |  \-\-        | 1995            | 07/14/2016             |  \+       |  \+        |  \-       |  ++    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Ofimatica        | Edición de imágenes bitmap             | Krita                    | GPLv2         |  \+       |  \+           | \+    | ++        |  \-\-        | 2005            | 05/31/2016             |  \+       |  \+        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Ofimatica        | Edición de gráficas vectoriales        | inkScape                 | GPL3+         |  \+       |  \+           | \+    | \-        |  \-\-        | 2003            | 01/30/2016             |  \+       |  \+        |  \-       |  ++    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Ofimatica        | Edicion de texto vectorial             | Scribus                  | GPL           |  \+       |  \+           | \+    | \-        |  \-\-        | 2003            | 05/17/2016             |  \+       |  \+        |  \+       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Ofimatica        | Cliente de Correo Electrónico          | Mozilla Thunderbird      | MPL           |  \+       |  \+           | \+    | \+        |  \-\-        | 2003            | 06/30/2016             |  \-       |  \+        |  \+       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Ofimatica        | Navegador Web                          | Mozilla Firefox          | MPL           |  \+       |  \+           | \+    | \+        |  \-\-        | 2002            | 08/02/2016             |  ++       |  ++        |  \+       |  ++    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Ofimatica        | Navegador Web                          | Chromium                 | BSD           |  \-       |  \+           | \+    | \+        |  \-\-        | 2008            | 08/12/2016             |  ++       |  ++        |  \+       |  ++    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Gestión          | Inteligencia Empresarial               | SpagoBI                  | MPL           |  \+       |  \+           | \+    | \-        |  \-\-        | 2011            | 03/24/2016             |  \+       |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Gestión          | Inteligencia Empresarial               | Pentaho                  | APL           |  \-       |  \+           | \+    | \-        |  \-\-        | 2008            | 04/01/2016             |  \+       |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | GIS                                    | QGIS                     | GPL           |  \+       |  \+           | \-    | \+        |  \-\-        | 2002            | 07/08/2016             | ++        |  \+        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Base de Datos                          | PostGIS                  | GPLv2         |  \+       |  \+           | \-    | \+        |  \-\-        | 2001            | 03/22/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Mapas Web                              | Chameleon                | BSD           |  \-       |  \+           | \-    | \-        |  \-\-        | 2002            | 09/06/2016             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Libreria                               | Geomajas                 | AGPLv3        |  \+       |  \+           | \-    | \-        |  \-\-        | 2007            | 01/15/2013             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Libreria                               | OpenLayers               | FreeBSD       |  \+       |  \+           | \+    | \+        |  \-\-        | 2006            | 05/24/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Libreria                               | Leaflet                  | BSD-2Cl       |  \+       |  \+           | \+    | \+        |  \-\-        | 2011            | 10/26/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Servidor de Metadatos                  | GeoNetwork               | GPLv2         |  \+       |  \+           | \-    | ++        |  \-\-        | 2003            | 07/12/2016             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Servidor                               | GeoServer                | GPL           |  \-       |  \+           | \-    | \+        |  \-\-        | 2006            | 05/28/2016             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Servidor                               | Deegree                  | LGPL          |  \+       |  \+           | \-    | \+        |  \-\-        | 2012            | 02/10/2015             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Cache                                  | GeoWebCache              | LGPL          |  \+       |  \+           | \-    | \+        |  \-\-        | 2008            | 08/02/2016             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| GIS              | Cache                                  | MapProxy                 | ASL2          |  \+       |  \+           | \-    | \+        |  \-\-        | 2011            | 07/22/2016             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Elec.            | Diseño de circuitos eléctricos         | KiCad                    | GPL           |  \+       |  \+           | \+    | \+        |  \-\-        | 1992            | 02/28/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Elec.            | Diseño de circuitos eléctricos         | gEDA                     | GPL           |  \+       |  \+           | \-    | \+        |  \-\-        | 1998            | 09/25/2013             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Elec.            | Diseño de circuitos eléctricos         | QUCS                     | GPLv2+        |  \+       |  \+           | \-    | \+        |  \-\-        | 2003            | 08/31/2014             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Elec.            | Diseño asistido CAD 3D                 | BRL-CAD                  | BSD,LGPL      |  \-       |  \+           | \+    | \+        |  \-\-        | 1984            | 08/11/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Elec.            | Diseño asistido CAD 2D                 | LibreCad                 | GPLv2         |  \+       |  \+           | \+    | \+        |  \-\-        | 2011            | 06/20/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Elec.            | Diseño asistido CAD 3D                 | FreeCad                  | LGPLv2+       |  \+       |  \+           | \+    | \+        |  \-\-        | 2002            | 04/18/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Matemáticas      | Análisis estadístico                   | R                        | GPL           |  \+       |  \+           | \-    | ++        |  \-\-        | 1993            | 04/14/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Matemáticas      | Análisis estadístico                   | PSPP                     | GPL           |  \+       |  \+           | \+    | ++        |  \-\-        | 1990            | 07/23/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Matemáticas      | Mineria de Datos                       | R                        | GPL           |  \+       |  \+           | \-    | ++        |  \-\-        | 1993            | 04/14/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Matemáticas      | Mineria de Datos                       | RapidMiner               | AGPL          |  \-\-     |  \-           | \+    | \+        |  \-\-        | 2006            | 08/02/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Servidor         | WEB                                    | Cherokee                 | GPLv2         |  \+       |  \+           | ++    | ++        |  \-\-        | 2006            | 07/22/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Servidor         | WEB                                    | Apache HTTP Server       | APLv2         |  \+       |  \+           | \+    | ++        |  \-\-        | 1995            | 07/04/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Servidor         | WEB                                    | Nginx                    | BSD           |  \-       |  \+           | \+    | \+        |  \-\-        | 2004            | 05/31/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Virtualización   | Hypervisor                             | Kernel-based VM(KVM)     | (L)GPL        |  \+       |  \+           | \+    | ++        |  \-\-        | 2007            | 09/05/2012             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Virtualización   | Hypervisor                             | Xen                      | GPLv2         |  \+       |  \+           | \+    | \+        |  \-\-        | 2003            | 06/23/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Virtualización   | Contenedor                             | LXC                      | GPL           |  \+       |  \+           | \+    | ++        |  \-\-        | 2008            | 06/28/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Virtualización   | Contenedor                             | OpenVZ                   | GPLv2         |  \+       |  \+           | \+    | ++        |  \-\-        | 2005            | 07/01/2016             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Virtualización   | Distribución                           | Proxmox Virtual Env.     | AGPL          |  \-       |  \+           | ++    | ++        |  \-\-        | 2008            | 04/27/2016             | ++        |  \+        |  \+       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Virtualización   | Infraestructura como Servicio          | OpenStack                | APL2          |  \+       |  \+           | \+    | ++        |  \-\-        | 2010            | 04/07/2016             | ++        |  \+        |  \+       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Editor           | Programación                           | XEmacs                   | GPLv2         |  \+       |  \+           | \+    | ++        |  \-\-        | 1987            | 01/04/2013             | ++        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Editor           | Programación                           | VIM                      | VIML          |  \+       |  \+           | \-    | ++        |  \-\-        | 1991            | 05/15/2016             | ++        |  \-        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Editor           | Programación                           | Atom                     | MIT           |  \-       |  \+           | ++    | ++        |  \-\-        | 2014            | 08/01/2016             | ++        |  ++        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | Relacionales Transaccionales           | PostgreSQL               | PSQLL         |  \+       |  \+           | \+    | ++        |  \-\-        | 1996            | 07/21/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | Relacionales Transaccionales           | MariaDB                  | GPL           |  \+       |  \+           | ++    | ++        |  \-\-        | 2009            | 07/18/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | Relacionales en Grupo                  | PostgreSQL + PgPoll      | FreeDom       |  \+       |  \+           | \-    | \+        |  \-\-        | 2003            | 06/17/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | Relacionales en Grupo                  | MariaDB Galera Cluster   | GPL           |  \+       |  \+           | ++    | ++        |  \-\-        | 2009            | 07/18/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | No Relacionales Distribuida            | Apache Cassandra         | APLv2         |  \+       |  \+           | \+    | ++        |  \-\-        | 2008            | 06/13/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | No Relacionales Orientada a Documen.   | Apache CouchDB           | APLv2         |  \+       |  \+           | \+    | ++        |  \-\-        | 2005            | 09/03/2014             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | No Relacionales Orientada a Documen.   | MongoDB                  | AGPL (e)      |  \-       |  \+           | \+    | ++        |  \-\-        | 2009            | 07/13/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | No Relacionales                        | Redis                    | BSD           |  \+       |  \+           | \+    | ++        |  \-\-        | 2009            | 08/02/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | En Tiempo Real                         | RethinkDB                | AGPL          |  \+       |  \+           | \+    | ++        |  \-\-        | 2009            | 05/02/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| Bases de Datos   | Orientadas a Grafos                    | Neo4J                    | AGPLv3        |  \-       |  \+           | \-    | \+        |  \-\-        | 2007            | 06/14/2016             | \+        |  \+        |  ++       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| IDE              | IDE                                    | NetBeans                 | CDDL          |  \-       |  \-           | \+    | \+        |  \-\-        | 1999            | 11/04/2016             | \+        |  \+        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| IDE              | IDE                                    | Eclipse                  | EPL           |  \+       |  \+           | \+    | \+        |  \-\-        | 2001            | 06/22/2016             | \+        |  \-        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-| IDE              | IDE                                    | IDEA                     | APLv2         |  \-       |  \+           | \+    | \+        |  \-\-        | 2001            | 07/12/2016             | \+        |  \+        |  \-       |  \+    |
-+------------------+----------------------------------------+--------------------------+---------------+-----------+---------------+-------+-----------+--------------+-----------------+------------------------+-----------+------------+-----------+--------+
-
+==============  ====================================  =======================  ===========  =========  ======  =======  =======  ==========  ==============  ==============  =========  ==========  ===============  ==============
+Categoría       Funcionalidad                         Software                 Licencia     |SOB|      |GEN|   |APR|    |SOP|    |PAQ|       Año de Inicio   |ULT|            |SEG|     |USAB|      |ESP|            |Comp|
+==============  ====================================  =======================  ===========  =========  ======  =======  =======  ==========  ==============  ==============  =========  ==========  ===============  ==============
+S.O.            Escritorio                            Linux                    GPLv2         ⊕          ⊕      ⊖        ⊕⊕         90k+      1991            29/07/2016      ⊖          ⊕⊕          ⊖                 ⊕⊕⊕
+S.O.            Escritorio                            PC-BSD                   BSD           ⊖          ⊖      ⊖⊖       ⊖          10k+      2006            04/04/2016      ⊕⊕         ⊕           ⊖                 ⊖
+S.O.            Movil                                 Linux                    GPLv2         ⊕          ⊕      ⊖        ⊕⊕         10k+      1991            29/07/2016      ⊖          ⊖           ⊖                 ⊕⊕⊕
+S.O.            Movil                                 Android                  APL           ⊖          ⊖      ⊕        ⊕⊕        700k+      2008            18/07/2016      ⊖          ⊕⊕          ⊕                 ⊕⊕⊕
+S.O.            Embebido                              Linux                    GPLv2         ⊕          ⊕      ⊖        ⊕⊕         10k+      1991            29/07/2016      ⊖          ⊖           ⊕                 ⊕⊕⊕
+S.O.            Embebido                              NetBSD                   BSD           ⊖          ⊖      ⊖⊖       ⊖⊖          3k+      1993            28/05/2016      ⊕⊕         ⊖⊖          ⊕                 ⊖
+S.O.            Embebido                              DragonFlyBSD             BSD           ⊖          ⊖      ⊖⊖       ⊖⊖          3k+      2004            19/04/2016      ⊕⊕         ⊖⊖          ⊕                 ⊖
+S.O.            Servidor                              Linux                    GPLv2         ⊕          ⊕      ⊖        ⊕⊕         10k+      1991            29/07/2016      ⊖          ⊕⊕          ⊖                 ⊕⊕⊕
+S.O.            Servidor                              OpenBSD                  BSD           ⊖          ⊖      ⊖⊖       ⊖           3k+      1996            29/03/2016      ⊕⊕         ⊕           ⊖                 ⊖
+Distro          Escritorio                            Debian                   DFSG          ⊕⊕         ⊕      ⊕        ⊕          56k+      1993            04/06/2016      ⊕          ⊕           ⊖                 ⊕
+Distro          Escritorio                            Fedora                   Varias        ⊖          ⊕      ⊕        ⊕          22k+      2003            21/06/2016      ⊕          ⊕           ⊖                 ⊕
+Distro          Escritorio                            Ubuntu                   GPL + otras   ⊖          ⊕      ⊕⊕       ⊕⊕         58k+      2004            21/07/2016      ⊕          ⊕⊕          ⊖                 ⊕⊕
+Distro          Servidor                              Debian                   DFSG          ⊕          ⊕      ⊕        ⊕          56k+      1993            04/06/2016      ⊕          ⊕           ⊖                 ⊕
+Distro          Servidor                              CentOS                   GPL           ⊕          ⊕      ⊕        ⊕          17k+      2004            25/05/2016      ⊕          ⊕           ⊕                 ⊕
+Distro          Servidor                              Ubuntu                   GPL + otras   ⊖          ⊕      ⊕⊕       ⊕⊕         58k+      2004            21/07/2016      ⊕          ⊕⊕          ⊖                 ⊕⊕
+Distro          Servidor                              RHEL                     GPL + otras   ⊖⊖⊖        ⊕      ⊕        ⊕          17k+      2004            25/05/2016      ⊕          ⊕           ⊕                 ⊕
+Ofimatica       Paquete de oficina                    LibreOffice              MPLv2.0       ⊕          ⊕      ⊕        ⊕           ⊖⊖       2011            22/07/2016      ⊕          ⊕           ⊖                 ⊕
+Ofimatica       Edición de imágenes bitmap            Gimp                     GPL3+         ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       1995            14/07/2016      ⊕          ⊕           ⊖                 ⊕⊕
+Ofimatica       Edición de imágenes bitmap            Krita                    GPLv2         ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2005            31/05/2016      ⊕          ⊕           ⊖                 ⊕
+Ofimatica       Edición de gráficas vectoriales       inkScape                 GPL3+         ⊕          ⊕      ⊕        ⊖           ⊖⊖       2003            30/01/2016      ⊕          ⊕           ⊖                 ⊕⊕
+Ofimatica       Edición de texto vectorial            Scribus                  GPL           ⊕          ⊕      ⊕        ⊖           ⊖⊖       2003            17/05/2016      ⊕          ⊕           ⊕                 ⊕
+Ofimatica       Cliente de Correo Electrónico         Mozilla Thunderbird      MPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       2003            30/06/2016      ⊖          ⊕           ⊕                 ⊕   
+Ofimatica       Navegador Web                         Mozilla Firefox          MPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       2002            02/08/2016      ⊕⊕         ⊕⊕          ⊕                 ⊕⊕
+Ofimatica       Navegador Web                         Chromium                 BSD           ⊖          ⊕      ⊕        ⊕           ⊖⊖       2008            12/08/2016      ⊕⊕         ⊕⊕          ⊕                 ⊕⊕
+Gestión         Inteligencia Empresarial              SpagoBI                  MPL           ⊕          ⊕      ⊕        ⊖           ⊖⊖       2011            24/03/2016      ⊕          ⊕           ⊕⊕                ⊕
+Gestión         Inteligencia Empresarial              Pentaho                  APL           ⊖          ⊕      ⊕        ⊖           ⊖⊖       2008            01/04/2016      ⊕          ⊕           ⊕⊕                ⊕
+GIS             GIS                                   QGIS                     GPL           ⊕          ⊕      ⊖        ⊕           ⊖⊖       2002            08/07/2016      ⊕⊕         ⊕           ⊖                 ⊕
+GIS             Base de Datos                         PostGIS                  GPLv2         ⊕          ⊕      ⊖        ⊕           ⊖⊖       2001            22/03/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+GIS             Mapas Web                             Chameleon                BSD           ⊖          ⊕      ⊖        ⊖           ⊖⊖       2002            06/09/2016      ⊕⊕         ⊖           ⊕⊕                ⊕
+GIS             Libreria                              Geomajas                 AGPLv3        ⊕          ⊕      ⊖        ⊖           ⊖⊖       2007            15/01/2013      ⊕⊕         ⊖           ⊕⊕                ⊕
+GIS             Libreria                              OpenLayers               FreeBSD       ⊕          ⊕      ⊕        ⊕           ⊖⊖       2006            24/05/2016      ⊕          ⊕           ⊕⊕                ⊕
+GIS             Libreria                              Leaflet                  BSD-2Cl       ⊕          ⊕      ⊕        ⊕           ⊖⊖       2011            26/10/2016      ⊕          ⊕           ⊕⊕                ⊕
+GIS             Servidor de Metadatos                 GeoNetwork               GPLv2         ⊕          ⊕      ⊖        ⊕⊕          ⊖⊖       2003            12/07/2016      ⊕⊕         ⊖           ⊕⊕                ⊕
+GIS             Servidor                              GeoServer                GPL           ⊖          ⊕      ⊖        ⊕           ⊖⊖       2006            28/05/2016      ⊕⊕         ⊖           ⊕⊕                ⊕
+GIS             Servidor                              Deegree                  LGPL          ⊕          ⊕      ⊖        ⊕           ⊖⊖       2012            10/02/2015      ⊕⊕         ⊖           ⊕⊕                ⊕
+GIS             Cache                                 GeoWebCache              LGPL          ⊕          ⊕      ⊖        ⊕           ⊖⊖       2008            02/08/2016      ⊕⊕         ⊖           ⊕⊕                ⊕
+GIS             Cache                                 MapProxy                 ASL2          ⊕          ⊕      ⊖        ⊕           ⊖⊖       2011            22/07/2016      ⊕⊕         ⊖           ⊕⊕                ⊕
+Elec.           Diseño de circuitos eléctricos        KiCad                    GPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       1992            28/02/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Elec.           Diseño de circuitos eléctricos        gEDA                     GPL           ⊕          ⊕      ⊖        ⊕           ⊖⊖       1998            25/09/2013      ⊕⊕         ⊖           ⊕⊕                ⊕
+Elec.           Diseño de circuitos eléctricos        QUCS                     GPLv2+        ⊕          ⊕      ⊖        ⊕           ⊖⊖       2003            31/08/2014      ⊕⊕         ⊖           ⊕⊕                ⊕
+Elec.           Diseño asistido CAD 3D                BRL-CAD                  BSD,LGPL      ⊖          ⊕      ⊕        ⊕           ⊖⊖       1984            11/08/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Elec.           Diseño asistido CAD 2D                LibreCad                 GPLv2         ⊕          ⊕      ⊕        ⊕           ⊖⊖       2011            20/06/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Elec.           Diseño asistido CAD 3D                FreeCad                  LGPLv2+       ⊕          ⊕      ⊕        ⊕           ⊖⊖       2002            18/04/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Matemáticas     Análisis estadístico                  R                        GPL           ⊕          ⊕      ⊖        ⊕⊕          ⊖⊖       1993            14/04/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Matemáticas     Análisis estadístico                  PSPP                     GPL           ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       1990            23/07/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Matemáticas     Mineria de Datos                      R                        GPL           ⊕          ⊕      ⊖        ⊕⊕          ⊖⊖       1993            14/04/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Matemáticas     Mineria de Datos                      RapidMiner               AGPL          ⊖⊖         ⊖      ⊕        ⊕           ⊖⊖       2006            02/08/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Servidor        WEB                                   Cherokee                 GPLv2         ⊕          ⊕      ⊕⊕       ⊕⊕          ⊖⊖       2006            22/07/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Servidor        WEB                                   Apache HTTP Server       APLv2         ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       1995            04/07/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Servidor        WEB                                   Nginx                    BSD           ⊖          ⊕      ⊕        ⊕           ⊖⊖       2004            31/05/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Servidor        WEB Java                              Apache Tomcat            APLv2         ⊕          ⊕      ⊕        ⊕           ⊖⊖       1999            06/07/2016      ⊕          ⊕           ⊕⊕                ⊕
+Servidor        LDAP                                  ReOpenLDAP               AGPL + OPL    ⊕          ⊕      ⊕        ⊕           ⊖⊖       2011            29/08/2016      ⊕⊕         ⊖           ⊕⊕                ⊕
+Servidor        LDAP                                  Apache Directory Server  APLv2         ⊕          ⊕      ⊕        ⊕           ⊖⊖       2006            02/05/2016      ⊕          ⊕           ⊕⊕                ⊕
+Servidor        LDAP                                  OpenLDAP                 OPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       1998            05/02/2016      ⊖          ⊖           ⊕⊕                ⊕
+Servidor        Prevención de Perdida de Datos        OpenDLP                  GPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       2010            27/08/2012      ⊕          ⊕           ⊕⊕                ⊕
+Servidor        Applicaciones Empresariales           TomEE                    APLv2         ⊕          ⊕      ⊕        ⊕           ⊖⊖       1999            07/03/2016      ⊕          ⊕           ⊕⊕                ⊕
+Servidor        Applicaciones Empresariales           Wildfly                  LGPL          ⊖          ⊕      ⊕        ⊕           ⊖⊖       1999            19/08/2016      ⊕          ⊕           ⊕⊕                ⊕
+Servidor        Applicaciones Empresariales           Glassfish                GPL CDDL      ⊖          ⊕      ⊕        ⊕           ⊖⊖       2005            07/10/2016      ⊕          ⊕           ⊕⊕                ⊕
+Virtualización  Hypervisor                            Kernel-based VM(KVM)     (L)GPL        ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2007            05/09/2012      ⊕⊕         ⊕           ⊕⊕                ⊕
+Virtualización  Hypervisor                            Xen                      GPLv2         ⊕          ⊕      ⊕        ⊕           ⊖⊖       2003            23/06/2016      ⊕          ⊕           ⊕⊕                ⊕
+Virtualización  Contenedor                            LXC                      GPL           ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2008            28/06/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Virtualización  Contenedor                            OpenVZ                   GPLv2         ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2005            01/07/2016      ⊕⊕         ⊕           ⊕⊕                ⊕
+Virtualización  Distribución                          Proxmox Virtual Env.     AGPL          ⊖          ⊕      ⊕⊕       ⊕⊕          ⊖⊖       2008            27/04/2016      ⊕⊕         ⊕           ⊕                 ⊕
+Virtualización  Infraestructura como Servicio         OpenStack                APL2          ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2010            07/04/2016      ⊕⊕         ⊕           ⊕                 ⊕
+Editor          Programación                          XEmacs                   GPLv2         ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       1987            04/01/2013      ⊕⊕         ⊕           ⊕⊕                ⊕
+Editor          Programación                          VIM                      VIML          ⊕          ⊕      ⊖        ⊕⊕          ⊖⊖       1991            15/05/2016      ⊕⊕         ⊖           ⊕⊕                ⊕
+Editor          Programación                          Atom                     MIT           ⊖          ⊕      ⊕⊕       ⊕⊕          ⊖⊖       2014            01/08/2016      ⊕⊕         ⊕⊕          ⊕⊕                ⊕
+Bases de Datos  Relacionales Transaccionales          PostgreSQL               PSQLL         ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       1996            21/07/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  Relacionales Transaccionales          MariaDB                  GPL           ⊕          ⊕      ⊕⊕       ⊕⊕          ⊖⊖       2009            18/07/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  Relacionales en Grupo                 PostgreSQL ⊕ PgPoll      FreeDom       ⊕          ⊕      ⊖        ⊕           ⊖⊖       2003            17/06/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  Relacionales en Grupo                 MariaDB Galera Cluster   GPL           ⊕          ⊕      ⊕⊕       ⊕⊕          ⊖⊖       2009            18/07/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  No Relacionales Distribuida           Apache Cassandra         APLv2         ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2008            13/06/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  No Relacionales Orientada a Documen.  Apache CouchDB           APLv2         ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2005            03/09/2014      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  No Relacionales Orientada a Documen.  MongoDB                  AGPL (e)      ⊖          ⊕      ⊕        ⊕⊕          ⊖⊖       2009            13/07/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  No Relacionales                       Redis                    BSD           ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2009            02/08/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  En Tiempo Real                        RethinkDB                AGPL          ⊕          ⊕      ⊕        ⊕⊕          ⊖⊖       2009            02/05/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  Orientadas a Grafos                   Neo4J                    AGPLv3        ⊖          ⊕      ⊖        ⊕           ⊖⊖       2007            14/06/2016      ⊕          ⊕           ⊕⊕                ⊕
+Bases de Datos  Herramienta de Administración         phpMyAdmin               GPLv2         ⊕          ⊕      ⊕        ⊕           ⊖⊖       1998            16/08/2016      ⊕          ⊕           ⊕                 ⊕
+Bases de Datos  Herramienta de Administración         phpPgAdmin               GPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       2001            11/06/2013      ⊕          ⊕           ⊕                 ⊕
+Bases de Datos  Herramienta de Administración         pgAdmin III              GPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       1998            11/02/2016      ⊕          ⊕           ⊕                 ⊕
+Bases de Datos  Herramienta de Administración         SQuirreL SQL Client      LGPL          ⊕          ⊕      ⊕        ⊕           ⊖⊖       2001            09/05/2016      ⊕          ⊕           ⊕                 ⊕
+IDE             IDE                                   NetBeans                 CDDL          ⊖          ⊖      ⊕        ⊕           ⊖⊖       1999            04/11/2016      ⊕          ⊕           ⊖                 ⊕
+IDE             IDE                                   Eclipse                  EPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       2001            22/06/2016      ⊕          ⊖           ⊖                 ⊕
+IDE             IDE                                   IntelliJ IDEA            APLv2         ⊖          ⊕      ⊕        ⊕           ⊖⊖       2001            12/07/2016      ⊕          ⊕           ⊖                 ⊕
+==============  ====================================  =======================  ===========  =========  ======  =======  =======  ==========  ==============  ==============  =========  ==========  ===============  ==============
 
