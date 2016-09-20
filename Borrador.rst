@@ -332,13 +332,28 @@ tener en consideración la experiencia de varios usuarios.
 Soporte 
 --------
 
-(Tamaño Comunidad) (Gobierno, Sociedad Civil)
+El nivel de soporte ofrecido por un proyecto indica la capacidad de ofrecer
+canales de comunicación que permitan mejorar la usabilidad del software, 
+resolver problemas, y proveer actualizaciones. Existen varios factores 
+que contribuyen en la creación de un sistema de soporte:
 
- Presencia en Bolivia
+- **Tamano de la Comunidad**. La comunidad es presente mediante newsletters, listas de correo o foros.
+- **Presencia en Bolivia**. La comunidad tiene miembros en Bolivia. 
+- **Busqueda con la palabra Bolivia** . Por ejemplo: Manjaro Linux Bolivia. 
 
-+ Búsquedas dentro del dominio .bo (ArchLinux site:.bo)
++------------------------------------+--------------------------+---------------+
+| Valor                              | Rangos/Valores Aceptados | Ejemplo       |
++------------------------------------+--------------------------+---------------+
+| Cantidad escalar proporcional al   | [ ⊖⊖, ⊖ , ⊕ , ⊕⊕ ]       | NetBSD : ⊖⊖   |
+| nivel de soporte ofrecido          |                          |               |
+|                                    |                          | OpenBSD : ⊖   |
+|                                    |                          |               |
+|                                    |                          | Debian : ⊕    |
+|                                    |                          |               |
+|                                    |                          | Ubuntu : ⊕⊕   |
+|                                    |                          |               |
++------------------------------------+--------------------------+---------------+
 
-+ Búsquedas con la palabra Bolivia (Manjaro Linux Bolivia)
 
 Numero de paquetes u opciones
 -----------------------------
