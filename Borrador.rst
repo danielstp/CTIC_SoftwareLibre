@@ -325,6 +325,18 @@ medida se refiere al numero de paquetes que se puedan instalar desde sus
 repositorios. En el caso de programas esta medida se refiere a la
 cantidad de extensiones o plug-ins instalables.
 
++------------------------------------+----------------------------------+-------------------------------+
+| Valor                              | Rangos/Valores Aceptados         | Ejemplo                       |
++------------------------------------+----------------------------------+-------------------------------+
+| Numero entero igual al numero      | [0 , infinito ]                  | Debian: 56k+                  |
+| de paquetes del sistema operativo  |                                  |                               |
+| o el numero de plugins o           | En caso de valores grande        | NetBSD: 3k+                   |
+| extensiones                        | se puede indicar como múltiples  |                               |
+| del software                       | de mil aumentando la letra k.    | LibreOffice: 302              |
+|                                    |                                  |                               |
++------------------------------------+----------------------------------+-------------------------------+
+
+
 Primera versión
 ---------------
 
