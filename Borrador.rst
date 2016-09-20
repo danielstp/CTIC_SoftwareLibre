@@ -532,16 +532,19 @@ en las siguientes categorías:
 +---------------------------+---------------------------+----------------------+
 | Valor                     | Rangos/Valores Aceptados  | Ejemplo              |
 +===========================+===========================+======================+
-| Cantidad escalar          | [ ⊖ , ⊕ ,⊕⊕ ]             | Gimp : (⊖)           |
+| Cantidad escalar          | [ ⊖ , ⊕ , ⊕⊕ ]            | Gimp : ⊖             |
 | proporcional al           |                           |                      |
-| nivel de especialización. |                           |                      |
-| Se indica **(-)** para    |                           | Mozilla Firefox: (⊕) |
+| nivel de especialización. |                           | Mozilla Firefox: ⊕   |
+|                           |                           |                      |
+| Se indica **⊖** para      |                           | Vim: ⊕⊕              |
 | software de uso general.  |                           |                      |
-| Se indica **(+)** para    |                           | Vim: (⊕⊕)            |
+|                           |                           |                      |
+| Se indica **⊕** para      |                           |                      |
 | software de uso especifico|                           |                      |
 | , donde la tarea tenga    |                           |                      |
 | varias características.   |                           |                      |
-| Se indica **(++)** para   |                           |                      |
+|                           |                           |                      |
+| Se indica **⊕⊕** para     |                           |                      |
 | software de uso altamente |                           |                      |
 | especifico                |                           |                      |
 |                           |                           |                      |
@@ -549,6 +552,34 @@ en las siguientes categorías:
 
 Compatibilidad
 --------------
+
+El software puede tener diferentes grados de compatibilidad dependiendo de
+los factores que se toman en consideración.
+
+En el caso de los sistemas operativos, la compatibilidad se define en relación 
+a el hardware. Es decir la capacidad de funcionar con una determinada arquitectura
+de CPU. También la disponibilidad de drivers para una determinada maquina.
+
+En el caso de programas informáticos, la compatibilidad se define como la capacidad
+de comprender y ser comprendido por otros programas. En este sentido, se puede
+considerar la capacidad de un software de funcionar con varios sistemas operativos.
+En el caso del software libre, esta capacidad se cumple en la gran mayoría de los casos,
+en cuanto su código fuente nos permite compilar el programa para sistemas y arquitecturas 
+específicos. 
+
+
++-------------------------------+---------------------------+--------------+
+| Valor                         | Rangos/Valores Aceptados  | Ejemplo      |
++===============================+===========================+==============+
+| Cantidad escalar proporcional | [ ⊖ , ⊕ , ⊕⊕ , ⊕⊕⊕ ]      | NetBSD : ⊖   |
+| al grado de compatibiliad del |                           |              |
+| software                      |                           | Debian : ⊕   |
+|                               |                           |              |
+|                               |                           | Ubuntu : ⊕⊕  |
+|                               |                           |              |
+|                               |                           | Linux :  ⊕⊕⊕ |
+|                               |                           |              |
++-------------------------------+---------------------------+--------------+
 
 
 ANEXO I
