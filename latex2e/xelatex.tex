@@ -8,21 +8,22 @@ $requirements
 \bibliographystyle{plainnat}
 
 \usepackage{parskip}
-\usepackage{adjustbox}
+\usepackage{tabu}
+%\usepackage{adjustbox}
 \usepackage{graphicx}
 \usepackage{pstricks}
-\usepackage{import}
-\usepackage{wallpaper}
+\usepackage{pdflscape}
 \usepackage{fancyhdr}
-\usepackage[letterpaper,top=2.7cm, bottom=1.2cm, inner=2.8cm, outer=1.3cm]{geometry}
+\usepackage{adjcalc}
+\usepackage[letterpaper,top=1.5cm, bottom=1.2cm, inner=1.8cm, outer=1cm]{geometry}
 \setlength{\parskip}{3mm}
-\setlength{\parindent}{15pt} 
-\setlength{\leftskip}{0mm}
-\setlength{\rightskip}{0mm}
-\setlength{\footskip}{5mm}
+\setlength{\parindent}{15pt}
+\setlength{\leftskip}{1mm}
+\setlength{\rightskip}{1mm}
+\setlength{\footskip}{1mm}
 \setlength{\headheight}{13mm}
 \setlength{\headsep}{2.5mm}
-
+%\setlength{\textheight}{19cm}
 \fancyhead{}
 \fancyhead[LE,RO]{\slshape \rightmark}
 \fancyhead[LO,RE]{\slshape \leftmark}
@@ -30,9 +31,6 @@ $requirements
 \fancyfoot{} % reset
 \fancyfoot[C]{\DUfooter}
 \pagestyle{fancy}
-
-\usepackage{overpic}
-\usepackage{pdflscape}
 \usepackage{etoolbox}
 \usepackage{tocloft}
 \usepackage[breaklinks,bookmarksnumbered, bookmarksopen=true]{hyperref}
@@ -43,14 +41,8 @@ $requirements
     linkcolor=blue,
     urlcolor=blue,
     linktoc=all}
-%para codigo fuente
-\usepackage{color}
-\usepackage{xcolor}
-\usepackage{listings}
-
 \usepackage{bookmark}
 \bookmarksetup{numbered}
-
 %reformatting the chapter headings
 \usepackage{titlesec}
 \titleformat{\chapter}[block]

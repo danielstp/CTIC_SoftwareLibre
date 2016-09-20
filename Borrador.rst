@@ -146,7 +146,7 @@ licencias:
 -  Nuevo Software: Queda en evidencia conforme la Ley de
    Telecomunicaciones, la preferencia y promoción que debe hacer el
    Estado a momento de utilizar el Software Libre. Este actuar en el
-   uso, compra o renovación de licencias es una obligación aplicable
+   uso, compra o renovación de licencias es una obrotateligación aplicable
    desde la entrada en vigencia de la Ley, no sujetándose esta
    obligación a ningún otro plazo.
 -  Migración de Software: El inciso b) de la Disposición Transitoria
@@ -535,7 +535,15 @@ titulo informativo, y no constituye un endoso del producto/organización.
 
 .. raw:: latex
 
-    \begin{landscape}
+    \setlength{\textheight}{19cm}
+    \newpage
+    \paperwidth=\pdfpageheight
+    \paperheight=\pdfpagewidth
+    \pdfpageheight=\paperheight
+    \pdfpagewidth=\paperwidth
+
+
+
 ==============  ====================================  =======================  ===========  =========  ======  =======  =======  ==========  ==============  ==============  =========  ==========  ===============  ==============
 Categoría       Funcionalidad                         Software                 Licencia     |SOB|      |GEN|   |APR|    |SOP|    |PAQ|       Año de Inicio   |ULT|            |SEG|     |USAB|      |ESP|            |Comp|
 ==============  ====================================  =======================  ===========  =========  ======  =======  =======  ==========  ==============  ==============  =========  ==========  ===============  ==============
@@ -624,8 +632,4 @@ IDE             IDE                                   NetBeans                 C
 IDE             IDE                                   Eclipse                  EPL           ⊕          ⊕      ⊕        ⊕           ⊖⊖       2001            22/06/2016      ⊕          ⊖           ⊖                 ⊕
 IDE             IDE                                   IntelliJ IDEA            APLv2         ⊖          ⊕      ⊕        ⊕           ⊖⊖       2001            12/07/2016      ⊕          ⊕           ⊖                 ⊕
 ==============  ====================================  =======================  ===========  =========  ======  =======  =======  ==========  ==============  ==============  =========  ==========  ===============  ==============
-
-.. raw:: latex
-
-    \end{landscape}
 
