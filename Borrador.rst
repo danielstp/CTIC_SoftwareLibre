@@ -300,10 +300,34 @@ es muy probable que el mecanismo de publicación de versiones sea cerrado.
 Curva de aprendizaje
 --------------------
 
-+ Duración media de los cursos introductorios
+La curva de aprendizaje es un diagrama que representa el esfuerzo 
+necesario para aprender una nueva herramienta.
+En tal diagrama están representados en el eje horizontal la acumulación 
+de lo aprendido y en el eje vertical la acumulación del tiempo gastado. 
+La pendiente de la curva es proporcional a la dificultad de aprendizaje.
 
-Método difuso de clasificación. Resultado de opiniones conjuntas desde
-múltiples usuarios.
+En el contexto del presente documento, se propone indicar simplemente
+un valor cualitativo que represente el grado de dificultad de aprendizaje
+del software. 
+
+Esta cantidad depende de la relación entre software y usuario. Por
+esta razón la medición de este valor tiene una componente subjetiva.
+Se recomienda ponderar este valor en un trabajo de equipo para poder
+tener en consideración la experiencia de varios usuarios.  
+
++------------------------------------+--------------------------+---------------+
+| Valor                              | Rangos/Valores Aceptados | Ejemplo       |
++------------------------------------+--------------------------+---------------+
+| Cantidad escalar proporcional al   | [ ⊖⊖, ⊖ , ⊕ , ⊕⊕ ]       | NetBSD : ⊖⊖   |
+| grado de dificultad de aprendizaje |                          |               |
+|                                    |                          | Linux  : ⊖    |
+|                                    |                          |               |
+|                                    |                          | Debian : ⊕    |
+|                                    |                          |               |
+|                                    |                          | Ubuntu : ⊕⊕   |
+|                                    |                          |               |
++------------------------------------+--------------------------+---------------+
+
 
 Soporte 
 --------
