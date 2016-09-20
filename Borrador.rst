@@ -195,14 +195,15 @@ selección presentados.
 CRITERIOS DE SELECCIÓN
 ======================
 
-En la presente sección se presentan los doce criterios de clasificación
+En la presente sección se presentan los 12 criterios de clasificación
 del software utilizados en la formulación de la lista de alternativas de
 software libre. Estos están pensados de manera jerárquica, esto permite hacer el
-análisis de los criterios, hasta que se llegue a uno que los diferencie. Estos
-parámetros están concebidos para ser reconducidos lo mas posible a cantidades
-ponderables. A continuación se presentan en detalle los varios criterios
-indicando en particular su descripción, la métrica utilizada y un ejemplo de
-uso.
+análisis de los criterios, hasta que se llegue a uno que los diferencie.
+
+Cada uno de los criterios es presentado con su descripción, la métrica 
+utilizada y un ejemplo de uso. Los criterio son presentados en
+orden de importancia decreciente. Este aspecto es importante 
+para poder realizar comparaciones de forma progresiva.
 
 Licencia
 --------
