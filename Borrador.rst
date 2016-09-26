@@ -2,7 +2,7 @@
 CRITERIOS DE SELECCIÓN DE SOFTWARE LIBRE
 ########################################
 
-:Versión: 0.0.1
+:Versión: 0.1
 
 Consejo Para Las Tecnologías De La Información Y Comunicación Del Estado
 Plurinacional De Bolivia
